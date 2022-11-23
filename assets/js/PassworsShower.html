@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pass Light Shower</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html,
+        body {
+            box-sizing: border-box;
+        }
+        
+        .container {
+            width: 100%;
+            height: 800px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .card {
+            display: flex;
+            height: 400px;
+            width: 400px;
+            border: 1px solid rgb(99, 96, 96);
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            background-color: whitesmoke;
+            box-shadow: 5px 5px 10px 5px grey;
+        }
+        
+        button {
+            height: 20px;
+        }
+        
+        #shower {
+            border-left: none;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .locker {
+            border-right: none;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        
+        #pass {
+            height: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="passdiv">
+
+                <button class="locker">icon</button><input type="password" name="password" id="pass"><button id="shower">showme</button>
+            </div>
+        </div>
+    </div>
+    <i class='fa fa-lock'></i>
+    <script>
+        let show = document.getElementById('shower');
+        let pass = document.getElementById('pass');
+        show.addEventListener('mousedown', function() {
+            if (pass.type == 'password') {
+                pass.type = 'text';
+            }
+        })
+        show.addEventListener('mouseup', function() {
+            if (pass.type == 'text') {
+                pass.type = 'password';
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background color generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        .nav ul {
+            display: flex;
+            width: 1000px;
+            /* justify-content: space-between; */
+            align-items: center;
+        }
+        
+        li {
+            list-style: none;
+            width: 400px;
+            border: 2px solid black;
+            /* border-collapse: collapse; */
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: aqua;
+        }
+        
+        li a {
+            text-decoration: none;
+            color: crimson;
+        }
+        
+        .main {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: 800px;
+            align-items: center;
+        }
+        
+        h2 {
+            background-color: rgb(0, 0, 0);
+            height: 70px;
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            border: 2px solid olivedrab;
+            border-radius: 20px;
+            /* margin-top: 400px; */
+            color: rgb(234, 234, 234);
+            /* text-transform: capitalize; */
+        }
+        
+        .color {
+            display: block;
+            text-align: center;
+        }
+        
+        #btn {
+            /* margin-top: 500px; */
+            padding: 20px 60px;
+            width: 300px;
+            background-color: transparent;
+            color: antiquewhite;
+            border-radius: 20px;
+            margin-top: 40px;
+            border: 4px solid black;
+            color: black;
+            font-weight: 1200;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+        }
+        
+        .div {
+            height: 200px;
+            width: 200px;
+            background-image: linear-gradient(rgba(233, 12, 123, 0.6), rgba(123, 125, 145, 0.6));
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <navbar class="nav">
+            <ul>
+                <li><a href="#">Simple Color</a> </li>
+                <li><a href="#">Hex Generator</a> </li>
+            </ul>
+        </navbar>
+    </div>
+    <div class="main">
+        <h2>Background-color
+            <span class="color">#ffffff</span>
+        </h2>
+        <button onclick="randnumcol()" id="btn"><strong>Click Me</strong></button>
+    </div>
+
+    <div class="div">
+        a
+    </div>
+
+    <script>
+        const btn = document.getElementById("btn");
+
+        // const colors = ["red", "green", "blue", "rgba(234, 123, 232, 0.6)"];
+        // addEventListener
+        let val1;
+
+        let val2;
+        let val3;
+
+
+        let val4;
+        let colors;
+
+        // console.log(colors);
+
+
+        const color = document.querySelector(".color")
+        btn.addEventListener('click', function() {
+            // console.log(document.body);
+            val1 = randnumcol();
+            val2 = randnumcol();
+            val3 = randnumcol();
+            val4 = randnumalpha();
+            colors = ["rgba" + "(" + val1 + "," + val2 + "," + val3 + "," + val4 + ")", "rgba" + "(" + val1 + "," + val2 + "," + val3 + "," + val4 + ")", "rgba" + "(" + val1 + "," + val2 + "," + val3 + "," + val4 + ")", "rgba" + "(" + val1 + "," + val2 + "," + val3 + "," + val4 + ")"];
+            const randnum = getRandnum();
+            console.log(randnum);
+            document.body.style.backgroundColor = colors[randnum];
+            color.textContent = colors[randnum];
+        })
+
+        function getRandnum() {
+            return Math.floor(Math.random() * colors.length);
+
+        }
+
+        function randnumcol() {
+
+            return Math.floor(Math.random() * 255);
+        }
+
+        function randnumalpha() {
+            return Math.random();
+        }
+    </script>
+</body>
+
+</html>
